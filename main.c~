@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+#define MAX_LONGITUD 40
+struct ejercicio
+{
+  char nombre[MAX_LONGITUD];
+};
+
+typedef struct ejercicio ejer;
+
+void nuevo_ejercicio()
+{
+  printf("Ingrese el nombre del nuevo ejercicio");
+  ejer *temp1= malloc(sizeof(ejer));
+  fgets(temp1->nombre,40,stdin);
+  printf("El nombre del ejercicio es %s",temp1->nombre);
+}
+int main()
+{
+  printf("Exercise Log\n");
+
+  printf("1.Comenzar\n");
+  printf("2.Crear nuevo ejercicio\n");
+
+  int selection=0;
+  scanf("%d",&selection);
+  getchar();
+  
+  switch(selection)
+  {
+    case 1:
+      break;
+    case 2:
+      nuevo_ejercicio();
+      break;
+    default:
+      break;
+  }
+  getchar();
+  return 0;
+}
+
